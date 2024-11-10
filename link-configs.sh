@@ -4,7 +4,7 @@
 create_symlink() {
 	src=$1
 	dest=$2
-	if [[ -e "$dest" ]]; then
+	if [ -e "$dest" ]; then
 		echo "Currently backing up existing file: $dest"
 		mv "$dest" "$dest.bak"
 	fi
