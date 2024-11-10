@@ -1,0 +1,12 @@
+```bash
+#!/usr/bin/env bash
+
+# Directory to be backed up
+source_dir="/home/arch/bin"
+
+# Backup location
+backup_dir="/home/arch/bin-backup"
+
+# Rsync command for backup
+rsync -avzh --delete "$source_dir" "$backup_dir"
+
