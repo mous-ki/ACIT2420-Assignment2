@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Checks if script is being run as root - if not, print error message
+# Checks for root privileges 
 if [ $EUID -ne 0 ]; then
 	echo "Error: please run as root" >&2
 	exit 1
