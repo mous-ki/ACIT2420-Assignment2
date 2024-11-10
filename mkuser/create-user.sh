@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Checks to see if user has root privileges, and prints a message if not
-if [[ $EUID -ne 0]]; then
+if [ $EUID -ne 0 ]; then
 	echo "Please run this script as root."
 	exit 1
 fi
@@ -18,7 +18,7 @@ while getopts "u:s:h:g" opt; do
 done
 
 # Checks required args
-if [[ -z $username || -z $shell || -z $home_dir ]]; then
+if [ -z $username || -z $shell || -z $home_dir ]; then
 	echo "Error: -u(username), -s(shell) and -h (home_dir) are required."
 	exit 1
 fi
@@ -31,7 +31,7 @@ useradd -m -d "$home_dir" -s "shell" -g "$username" "$username"
 cp -r /etc/skel/. "$home_dir/"
 
 # Adds the user to any additional groups, if specified
-[[ -n $groups ]] && usermod -aG "$groups" "$username"
+[ -n $groups ] && usermod -aG "$groups" "$username"
 
 # Sets a password for the user
 echo "Set a password for $username:"
