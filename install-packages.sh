@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Checks if script is being run as root - if not, print error message
-if [[ $EUID -ne 0 ]]; then
+if [ $EUID -ne 0 ]; then
 	echo "Error: please run as root" >&2
 	exit 1
 fi
 
 # Checks to see if packages.txt (user-defined list) exists
-if [[ ! -f "packages.txt" ]]; then
+if [ ! -f "packages.txt" ]; then
 	echo "Error: packages.txt file wasn't found. Please create it with the list of packages to be installed." >&2
 	exit 1
 fi
