@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Checks if script is being run as root - if not, print error message
-if [[ $EUID -ne 0]]; then
+if [[ $EUID -ne 0 ]]; then
 	echo "Error: please run as root" >&2
 	exit 1
 fi
