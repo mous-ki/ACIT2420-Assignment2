@@ -14,7 +14,7 @@ fi
 
 # Reads and installs each package listed in packages.txt file
 echo "Installing packages from packages.txt..."
-while rear -r package; do
+while read -r package; do
 	if ! pacman -S --noconfirm "$package"; then
 		echo "Failed to install $package" >&2
 	else 
